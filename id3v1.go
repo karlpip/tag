@@ -9,7 +9,6 @@ import (
 	"io"
 	"strconv"
 	"strings"
-	"time"
 )
 
 // id3v1Genres is a list of genres as given in the ID3v1 specification.
@@ -143,6 +142,3 @@ func (metadataID3v1) Disc() (int, int)      { return 0, 0 }
 func (m metadataID3v1) Picture() *Picture   { return nil }
 func (m metadataID3v1) Lyrics() string      { return "" }
 func (m metadataID3v1) Comment() string     { return m["comment"].(string) }
-func (m metadataID3v1) Duration() time.Duration {
-	return time.Second
-}
